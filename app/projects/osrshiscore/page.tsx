@@ -9,8 +9,17 @@ export default async function Page({
 }: {
   searchParams: { name: string | string[] };
 }) {
-  if (name && name.length === 0) return <div>No names provided</div>;
+  if (!name || name.length === 0)
+    return (
+      <div className="bg-gradient-to-br relative from-orange-600 to-yellow-600 w-full min-h-screen">
+        <div className="max-w-[600px] mx-auto p-4">
+          <h1 className="text-3xl">OSRS multiscore</h1>
+          <p>No names provided</p>
+        </div>
+      </div>
+    );
 
+  console.log("name", name);
   const usernames = Array.isArray(name) ? name : [name];
 
   const data = await Promise.all(
