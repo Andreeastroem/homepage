@@ -2,7 +2,7 @@ import { getStatsByGamemode } from "osrs-json-hiscores";
 import PlayerCard from "./PlayerCard/PlayerCard";
 import PlayerCards from "./PlayerCard/PlayerCards";
 
-export const dynamic = "dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function Page({
   searchParams: { name },
